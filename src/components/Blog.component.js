@@ -27,22 +27,31 @@ class Blog extends Component {
     return (
       <React.Fragment>
          <Nav/>
-        <div className="row blogs ">
+         
+        <div className="container blogs ">
               
-          
+        <div className="row">
             {
               items.map(item => (
-            
-               <div className=" col col-md-5 well container">
-                <p>{item.title}</p>
-                <span className="lift">{item.id}</span>
-                <span className="right">{item.userId}</span>
-               </div>
+                <div className="col-md-6">
+                <div className="card flex-md-row mb-4 shadow-sm h-md-250">
+                  <div className="card-body d-flex flex-column align-items-start">
+                    <strong className="d-inline-block mb-2 text-primary">{item.id}</strong>
+                    <h3 className="mb-0">
+                      {item.title}
+                    </h3>
+                    <div className="mb-1 text-muted">{item.userId}</div>
+                    
+                  </div>
+                </div>
+              </div>
+               
                
                
               ))
             }
          
+        </div>
         </div>
       </React.Fragment>
     );
